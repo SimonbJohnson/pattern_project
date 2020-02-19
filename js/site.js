@@ -30,6 +30,7 @@ function patternLogo(svg,x,y){
 		.text("PATTERN")
 		.attr("font-family", "Roboto")
 		.attr("font-size", "30px")
+		.attr("font-weight", 300)
 		.attr("fill", "#ffffff");
 
 	let projectText = svgContainer
@@ -42,6 +43,7 @@ function patternLogo(svg,x,y){
 		.text("PROJECT")
 		.attr("font-family", "Roboto")
 		.attr("font-size", "30px")
+		.attr("font-weight", 300)
 		.attr("fill", "#ffffff");				
 }
 
@@ -259,8 +261,7 @@ function toRadians (angle) {
 
 function init(id){
 	let width = $(id).width();
-	let height = Math.max(window.innerHeight,600);
-
+	let height = Math.max(window.innerHeight,400);
 	let svg = d3.select(id).append("svg")
         .attr("width", width)
         .attr("height", height);
@@ -268,8 +269,12 @@ function init(id){
     let zigZagLayer = svg.append('g');
 
     let shapeLayer = svg.append('g');
-
-	patternLogo(svg,width/2,height/2);
+    if(width>900){
+		patternLogo(svg,width/4,height/2);
+	} else {
+		patternLogo(svg,width/2,height/2);
+	}
+	
 	
 	randomZigZags(zigZagLayer,width,height);
 	randomShapes(shapeLayer,width,height);
