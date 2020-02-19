@@ -56,7 +56,7 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 	let zigZag = svg.append("path")
 		.attr("d", zigZagFunction(data))
-		.attr("stroke", "#fc1268")
+		.attr("stroke", "#000000")
 		.attr("stroke-width", 2)
 		.attr("fill", "none");
 
@@ -245,7 +245,7 @@ function randomShapes(layer,width,height){
 			}
 			x = Math.floor(Math.random()*(width-20)) + 20;			
 		}
-		movingCircle(layer,'circle','#fc1268',x,y,false,size,rotation,10,width,height);
+		movingCircle(layer,'circle','#000000',x,y,false,size,rotation,10,width,height);
 	}
 	
 	setTimeout(function(){
